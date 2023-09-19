@@ -19,14 +19,12 @@ void openUrlInBrowser(const char *url) {
             printf("Error: Failed to open the web browser.\n");
         }
     #else
-        printf("Error: Unsupported operating system.\n");
+        printf("Error: You're boring :(\n");
     #endif
 }
 
 int main() {
     const char *url = "https://www.youtube.com/watch?v=z6nngId317g";
-
-    printf("Opening URL: %s\n", url);
 
     openUrlInBrowser(url);
 

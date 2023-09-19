@@ -1,0 +1,10 @@
+Gtk-Message: 03:50:49.000: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+
+(firefox:5175): Gtk-WARNING **: 03:50:49.083: GTK+ module /snap/firefox/3134/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.
+Gtk-Message: 03:50:49.083: Failed to load module "canberra-gtk-module"
+
+(firefox:5175): Gtk-WARNING **: 03:50:49.084: GTK+ module /snap/firefox/3134/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.
+Gtk-Message: 03:50:49.084: Failed to load module "canberra-gtk-module"
+ATTENTION: default value of option mesa_glthread overridden by environment.
