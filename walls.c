@@ -1,45 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-char *url = "https://www.youtube.com/watch?v=z6nngId317g";
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
-void runOnWindws(){
-    // Use the windows API to open up the default web browser on the computer to the youtube URL
-    ShellExecute(NULL, "open", url, NULL, NULL, SW_SHOWNORMAL);
-}
-
-void runOnLinux(){
-// Use the system's function to use the default web browser
-char command[256];
-    snprintf(command, sizeof(command), "xdg-open \"%s\"", url);
-    system(command);
-}
-
-void runOnUnix(){
-// Same command as the Linux system
-char command[256];
-    snprintf(command, sizeof(command), "xdg-open \"%s\"", url);
-    system(command);
-}
-
-
-// Determines the OS by the Macros on compilation and goes from there
-int main() {
+void openUrlInBrowser(const char *url) {
     #ifdef _WIN32
-        printf("Operating System: Windows\n");
-	runOnWindows();
-    #elif __linux__
-        printf("Operating System: Linux\n");
-	runOnLinux();
-    #elif __unix__
-        printf("Operating System: Unix\n");
-	runOnUnix();
+        // Use the Windows API to open the default web browser on Windows
+        if (ShellExecute(NULL, "open", url, NULL, NULL, SW_SHOWNORMAL) <= (HINSTANCE)32) {
+            printf("Error: Failed to open the web browser.\n");
+        }
+    #elif defined(__linux__) || defined(__unix__)
+        // Use the system function to open the default web browser on Linux/Unix
+        char command[256];
+        snprintf(command, sizeof(command), "xdg-open \"%s\"", url);
+        if (system(command) != 0) {
+            printf("Error: Failed to open the web browser.\n");
+        }
     #else
-        printf("Operating System: Unknown\n");
+        printf("Error: Unsupported operating system.\n");
     #endif
+}
+
+int main() {
+    const char *url = "https://www.youtube.com/watch?v=z6nngId317g";
+
+    printf("Opening URL: %s\n", url);
+
+    openUrlInBrowser(url);
 
     return 0;
 }
-
-
-// YouTube link: 
-// https://www.youtube.com/watch?v=z6nngId317g
