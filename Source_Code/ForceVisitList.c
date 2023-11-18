@@ -47,13 +47,14 @@ int main(int argc, char *argv[]) {
 
         listOfURLS[index] = strdup(userInput);
         index++;
+    }
 
-        if (strstr(userInput, "http://") != NULL || strstr(userInput, "https://") != NULL) {
-            openUrlInBrowser(userInput);
+    for (int i = 0; i < index; i++) {
+        if (strstr(listOfURLS[i], "http://") != NULL || strstr(listOfURLS[i], "https://") != NULL) {
+            openUrlInBrowser(listOfURLS[i]);
         } else {
-            printf("Error: No 'http://' or 'https://' included in provided URL\n");
+            printf("Error: No 'http://' or 'https://' included in provided URL: %s\n", listOfURLS[i]);
         }
-
         sleep(3);
     }
 
