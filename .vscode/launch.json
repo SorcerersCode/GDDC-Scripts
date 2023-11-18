@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/dylantarace/Visual Studio/GDDC-Scripts",
+      "program": "/Users/dylantarace/Visual Studio/GDDC-Scripts/build/Debug/outDebug"
+    }
+  ]
+}
