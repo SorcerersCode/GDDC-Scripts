@@ -1,0 +1,27 @@
+.hacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    color: #fff;
+  }
+  
+  .hacked-image {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: red;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: red;
+  }
+  
